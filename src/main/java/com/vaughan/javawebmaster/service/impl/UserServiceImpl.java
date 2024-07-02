@@ -1,18 +1,19 @@
 package com.vaughan.javawebmaster.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.vaughan.javawebmaster.common.ErrorCode;
 import com.vaughan.javawebmaster.constant.CommonConstant;
 import com.vaughan.javawebmaster.exception.BusinessException;
 import com.vaughan.javawebmaster.model.dto.user.UserQueryRequest;
-import com.vaughan.javawebmaster.model.entity.User;
 import com.vaughan.javawebmaster.model.enums.UserRoleEnum;
 import com.vaughan.javawebmaster.model.vo.LoginUserVO;
 import com.vaughan.javawebmaster.model.vo.UserVO;
 import com.vaughan.javawebmaster.service.UserService;
 import com.vaughan.javawebmaster.mapper.UserMapper;
 import com.vaughan.javawebmaster.utils.SqlUtils;
+import com.vaughan.javawebmaster.model.entity.User;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.BeanUtils;
@@ -25,6 +26,8 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import java.util.Map;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 import static com.vaughan.javawebmaster.constant.UserConstant.USER_LOGIN_STATE;
@@ -216,6 +219,52 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
         queryWrapper.orderBy(SqlUtils.validSortField(sortField), sortOrder.equals(CommonConstant.SORT_ORDER_ASC),
                 sortField);
         return queryWrapper;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+    @Override
+    public boolean saveBatch(Collection<User> entityList, int batchSize) {
+        return false;
+    }
+
+    @Override
+    public boolean saveOrUpdateBatch(Collection<User> entityList, int batchSize) {
+        return false;
+    }
+
+    @Override
+    public boolean updateBatchById(Collection<User> entityList, int batchSize) {
+        return false;
+    }
+
+    @Override
+    public boolean saveOrUpdate(User entity) {
+        return false;
+    }
+
+    @Override
+    public User getOne(Wrapper<User> queryWrapper, boolean throwEx) {
+        return null;
+    }
+
+    @Override
+    public Map<String, Object> getMap(Wrapper<User> queryWrapper) {
+        return null;
+    }
+
+    @Override
+    public <V> V getObj(Wrapper<User> queryWrapper, Function<? super Object, V> mapper) {
+        return null;
     }
 }
 

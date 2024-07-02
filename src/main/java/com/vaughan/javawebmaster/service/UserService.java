@@ -2,14 +2,14 @@ package com.vaughan.javawebmaster.service;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.vaughan.javawebmaster.model.dto.user.UserQueryRequest;
-import com.vaughan.javawebmaster.model.entity.User;
 import com.baomidou.mybatisplus.extension.service.IService;
 import javax.servlet.http.HttpServletRequest;
+
+import com.vaughan.javawebmaster.model.entity.User;
 import com.vaughan.javawebmaster.model.vo.LoginUserVO;
 import com.vaughan.javawebmaster.model.vo.UserVO;
 
 import java.util.List;
-import java.util.Queue;
 
 /**
  * @author wangyongning

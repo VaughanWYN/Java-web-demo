@@ -1,7 +1,7 @@
 package com.vaughan.javawebmaster.mapper;
 
-import com.vaughan.javawebmaster.model.entity.User;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.vaughan.javawebmaster.model.entity.User;
 
 /**
 * @author wangyongning

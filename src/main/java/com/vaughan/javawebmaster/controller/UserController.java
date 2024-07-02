@@ -1,7 +1,6 @@
 package com.vaughan.javawebmaster.controller;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.fasterxml.jackson.databind.ser.Serializers;
 import com.vaughan.javawebmaster.annotation.AuthCheck;
 import com.vaughan.javawebmaster.common.BaseResponse;
 import com.vaughan.javawebmaster.common.DeleteRequest;
@@ -27,6 +26,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/user")
 @Slf4j
+@CrossOrigin(origins = "*")
 public class UserController {
     @Resource
     private UserService userService;
@@ -36,6 +36,7 @@ public class UserController {
     /**
      * 用户注册
      */
+
     @PostMapping("/register")
     public BaseResponse<Long> userRegister(@RequestBody UserRegisterRequest userRegisterRequest) {
         if (userRegisterRequest == null) {
@@ -50,7 +51,6 @@ public class UserController {
         long result = userService.userRegister(userAccount, userPassword, checkPassword);
         return ResultUtils.success(result);
     }
-    @CrossOrigin(origins = "http://localhost:8080/user/login")
     @PostMapping("/login")
     public BaseResponse<LoginUserVO> userLogin(@RequestBody UserLoginRequest userLoginRequest, HttpServletRequest request) {
         if (userLoginRequest == null) {

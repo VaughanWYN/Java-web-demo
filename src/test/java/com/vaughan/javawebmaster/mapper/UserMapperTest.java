@@ -23,7 +23,7 @@ public class UserMapperTest {
         user.setUserpassword("dsasadsad");
         user.setUnionid("是小宁宁呀！");
         user.setMpopenid("dasadadasd");
-        user.setUsername("王永宁");
+        user.setRealname("王永宁");
         user.setUseravatar("dajdkshakdh");
         user.hashCode();
 
@@ -42,9 +42,8 @@ public class UserMapperTest {
         user.setUserpassword("321");
         user.setUnionid("321");
         user.setMpopenid("321");
-        user.setUsername("xixi");
+        user.setRealname("xixi");
         user.setUseravatar("321321");
-        user.setUserprofile("321321");
         user.setUserrole("1");
         user.setCreatetime(new Date());
         user.setUpdatetime(new Date());
